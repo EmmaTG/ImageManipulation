@@ -80,8 +80,7 @@ public class ImageAlterations {
             for (int x=0; x< transformedMat.length; x++) {
                 byte[] pixel = bMat[x][y];
                 for (int i = 0; i < pixel.length; i++) {
-                    byte b = pixel[i];
-                    int bInt = (int) b;
+                    int bInt = pixel[i];
                     if (bInt < 0) {
                         bInt = 256 + bInt;
                     }
