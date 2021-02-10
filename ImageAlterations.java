@@ -72,6 +72,33 @@ public class ImageAlterations {
         System.out.println("See "+filename);
     }
 
+    public byte[][][] alterColor(byte[][][] bMat) {
+        int width = bMat.length;
+        int height = bMat[0].length;
+        byte[][][] transformedMat = new byte[width][height][3];
+        for (int y=0; y< transformedMat[0].length; y++) {
+            for (int x=0; x< transformedMat.length; x++) {
+                byte[] pixel = bMat[x][y];
+                for (int i = 0; i < pixel.length; i++) {
+                    byte b = pixel[i];
+                    int bInt = (int) b;
+                    if (bInt < 0) {
+                        bInt = 256 + bInt;
+                    }
+                    if (bInt < 64) {
+                        pixel[i] = 0;
+                    } else if (bInt > 191) {
+                        pixel[i] = (byte) 255;
+                    } else {
+                        pixel[i] = (byte) 127;
+                    }
+                }
+                transformedMat[x][y] = pixel;
+            }
+        }
+        return transformedMat;
+    }
+
     public byte[][][] rotateImage90Deg(byte[][][] bMat){
         int width = bMat.length;
         int height = bMat[0].length;
