@@ -7,7 +7,7 @@ public class Main {
         try {
             ImageAlterations imageToAlter = new ImageAlterations(filename);
             byte[][][] pixels = imageToAlter.getPixelGrid();
-            pixels = imageToAlter.alterColor(pixels); //Uncomment to alter teh image colors
+            pixels = imageToAlter.alterColor(pixels); //Uncomment to alter the image colors
 //            pixels = imageToAlter.swapColors(pixels,0,1); //Uncomment to swap red and green colors
 //            pixels = imageToAlter.swapColors(pixels,0,2); //Uncomment to swap red and blue colors
 //            pixels = imageToAlter.swapColors(pixels,2,1); //Uncomment to swap blue and green colors
